@@ -44,6 +44,10 @@ class Test extends Reduxable<TestState, [string]> {
         };
     }
 
+    public get saga(): (() => Iterator<never>) {
+        return function* (): Iterator<never> {/* Stub */};
+    }
+
     public run(data: string): TestAction {
         return { type: 'TEST', data };
     }
@@ -71,6 +75,7 @@ beforeEach(() => {
         a1.reducer,
         applyMiddleware(sagaMiddleware),
     );
+    sagaMiddleware.run(a1.saga);
 });
 
 test('Should set default state on the store', () => {

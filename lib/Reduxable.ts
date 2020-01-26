@@ -1,4 +1,4 @@
-import { SagaIterator } from '@redux-saga/types';
+import { Saga, SagaIterator } from '@redux-saga/types';
 import { Action, AnyAction, Reducer } from 'redux';
 
 export interface ReduxableState<T = any> {
@@ -14,6 +14,7 @@ export type InternalReducer<S = any> = (state: S, action: Action) => S;
 export abstract class Reduxable<S extends ReduxableState, P extends any[] = []> {
     public abstract readonly actions: AnyAction;
     public abstract readonly defaultState: S;
+    public abstract readonly saga: Saga;
     public abstract readonly runSaga: (...arg: P) => SagaIterator<S>;
 
     protected abstract readonly internalReducer: InternalReducer<S>;

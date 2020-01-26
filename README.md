@@ -1,2 +1,26 @@
 # reduxable
-Abstract class to create mountable redux store parts with builtin reducers and redux-sagas
+
+[![GPL-3.0](https://img.shields.io/github/license/weavedev/reduxable.svg)](https://github.com/weavedev/reduxable/blob/master/LICENSE)
+[![NPM](https://img.shields.io/npm/v/@weavedev/reduxable.svg)](https://www.npmjs.com/package/@weavedev/reduxable)
+
+Abstract class to create mountable [Redux](http://redux.js.org/) store parts with builtin reducers and [Redux-Saga](https://redux-saga.js.org) generators
+
+## Install
+
+```
+npm i @weavedev/reduxable
+```
+
+## API documentation
+
+We generate API documentation with [TypeDoc](https://typedoc.org).
+
+[![API Documentation](https://img.shields.io/badge/API-Documentation-blue?style=for-the-badge&logo=typescript)](https://weavedev.github.io/reduxable/)
+
+## Usage
+
+## License
+
+[GPL-3.0](https://github.com/weavedev/reduxable/blob/master/LICENSE)
+
+Made by [Paul Gerarts](https://github.com/gerarts) and [Weave](https://weave.nl)

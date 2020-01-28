@@ -1,5 +1,5 @@
 import { Saga, SagaIterator } from '@redux-saga/types';
-import { Action, AnyAction, Reducer } from 'redux';
+import { Action, Reducer } from 'redux';
 
 export interface ReduxableState<T = any> {
     data: T;
@@ -9,14 +9,14 @@ export interface ReduxableState<T = any> {
 export type InternalReducer<S = any> = (state: S, action: Action) => S;
 
 export interface ActionMap {
-    [key: string]: AnyAction;
+    [key: string]: Action;
 }
 
 /**
  * Abstract something something
  */
-export abstract class Reduxable<S extends ReduxableState, P extends any[] = []> {
-    public abstract readonly actionMap: ActionMap;
+export abstract class Reduxable<S extends ReduxableState, A extends ActionMap, P extends any[] = []> {
+    public abstract readonly actionMap: A;
     public abstract readonly defaultState: S;
     public abstract readonly saga: Saga;
     public abstract readonly runSaga: (...arg: P) => SagaIterator<S>;
@@ -25,14 +25,14 @@ export abstract class Reduxable<S extends ReduxableState, P extends any[] = []> 
 
     private internalState?: S;
 
-    public get actions(): ActionMap[keyof ActionMap] {
-        throw new Error('ReduxAsync.actions should only be used as a TypeScript type provider (typeof .actions)');
+    public get actions(): A[keyof A] {
+        throw new Error('Reduxable.actions should only be used as a TypeScript type provider (typeof .actions)');
     }
 
-    public abstract run(...arg: P): AnyAction;
+    public abstract run(...arg: P): Action;
 
     public get reducer(): Reducer<S> {
-        const context: Reduxable<S, P> = this;
+        const context: Reduxable<S, A, P> = this;
 
         return (state: S = context.defaultState, action: Action): S => {
             return context.internalState = context.internalReducer(state, action);

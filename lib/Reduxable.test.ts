@@ -1,7 +1,7 @@
 import { Action, applyMiddleware, createStore, Reducer, Store } from 'redux';
 import reduxSaga, { SagaIterator, SagaMiddleware } from 'redux-saga';
 import { put } from 'redux-saga/effects';
-import { Reduxable, ReduxableState } from './Reduxable';
+import { ActionMap, Reduxable, ReduxableState } from './Reduxable';
 
 interface TestAction extends Action<'TEST'> {
     data: string;
@@ -11,12 +11,16 @@ interface TestState extends ReduxableState<string> {
     reducer: boolean;
 }
 
+interface TestActions extends ActionMap {
+    testAction: TestAction;
+}
+
 /**
  * Fixture to test Reduxable
  */
-class Test extends Reduxable<TestState, [string]> {
-    public get actions(): TestAction {
-        throw new Error('Test.actions should only be used as a TypeScript type provider');
+class Test extends Reduxable<TestState, TestActions, [string]> {
+    public get actionMap(): TestActions {
+        throw new Error('Test.actionMap should only be used as a TypeScript type provider');
     }
 
     public get defaultState(): TestState {
@@ -76,6 +80,12 @@ beforeEach(() => {
         applyMiddleware(sagaMiddleware),
     );
     sagaMiddleware.run(a1.saga);
+});
+
+test('Should throw when accessing .actions', () => {
+    expect(() => {
+        console.log(a1.actions, 'never');
+    }).toThrowError();
 });
 
 test('Should set default state on the store', () => {

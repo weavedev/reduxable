@@ -12,11 +12,14 @@ export interface ActionMap {
     [key: string]: Action;
 }
 
+export type ActionTypesFromActionMap<A extends ActionMap> = {[T in keyof A]: A[T]['type']}
+
 /**
  * Abstract something something
  */
 export abstract class Reduxable<S extends ReduxableState, A extends ActionMap, P extends any[] = []> {
     public abstract readonly actionMap: A;
+    public abstract readonly actionTypeMap: ActionTypesFromActionMap<A>;
     public abstract readonly defaultState: S;
     public abstract readonly saga: Saga;
     public abstract readonly runSaga: (...arg: P) => SagaIterator<S>;

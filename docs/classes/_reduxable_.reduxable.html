@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Reduxable | @weavedev/reduxable - v1.0.1</title>
+	<title>Reduxable | @weavedev/reduxable - v1.0.6</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@weavedev/reduxable - v1.0.1</a>
+					<a href="../index.html" class="title">@weavedev/reduxable - v1.0.6</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -62,7 +62,7 @@
 					<a href="_reduxable_.reduxable.html">Reduxable</a>
 				</li>
 			</ul>
-			<h1>Class Reduxable&lt;S, P&gt;</h1>
+			<h1>Class Reduxable&lt;S, A, P&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -81,6 +81,9 @@
 				<ul class="tsd-type-parameters">
 					<li>
 						<h4>S<span class="tsd-signature-symbol">: </span><a href="../interfaces/_reduxable_.reduxablestate.html" class="tsd-signature-type">ReduxableState</a></h4>
+					</li>
+					<li>
+						<h4>A<span class="tsd-signature-symbol">: </span><a href="../interfaces/_reduxable_.actionmap.html" class="tsd-signature-type">ActionMap</a></h4>
 					</li>
 					<li>
 						<h4>P<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -102,7 +105,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_reduxable_.reduxable.html#actions" class="tsd-kind-icon">actions</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_reduxable_.reduxable.html#actionmap" class="tsd-kind-icon">action<wbr>Map</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_reduxable_.reduxable.html#actiontypemap" class="tsd-kind-icon">action<wbr>Type<wbr>Map</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_reduxable_.reduxable.html#defaultstate" class="tsd-kind-icon">default<wbr>State</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_reduxable_.reduxable.html#internalreducer" class="tsd-kind-icon">internal<wbr>Reducer</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_reduxable_.reduxable.html#internalstate" class="tsd-kind-icon">internal<wbr>State</a></li>
@@ -113,6 +117,7 @@
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_reduxable_.reduxable.html#actions" class="tsd-kind-icon">actions</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_reduxable_.reduxable.html#reducer" class="tsd-kind-icon">reducer</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_reduxable_.reduxable.html#state" class="tsd-kind-icon">state</a></li>
 							</ul>
@@ -129,12 +134,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="actions" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> actions</h3>
-					<div class="tsd-signature tsd-kind-icon">actions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AnyAction</span></div>
+					<a name="actionmap" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> action<wbr>Map</h3>
+					<div class="tsd-signature tsd-kind-icon">action<wbr>Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">A</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/8e8f19c/lib/Reduxable.ts#L15">Reduxable.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/18a3410/lib/Reduxable.ts#L21">Reduxable.ts:21</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="actiontypemap" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> action<wbr>Type<wbr>Map</h3>
+					<div class="tsd-signature tsd-kind-icon">action<wbr>Type<wbr>Map<span class="tsd-signature-symbol">:</span> <a href="../modules/_reduxable_.html#actiontypesfromactionmap" class="tsd-signature-type">ActionTypesFromActionMap</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">A</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/18a3410/lib/Reduxable.ts#L22">Reduxable.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -144,7 +159,7 @@
 					<div class="tsd-signature tsd-kind-icon">default<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">S</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/8e8f19c/lib/Reduxable.ts#L16">Reduxable.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/18a3410/lib/Reduxable.ts#L23">Reduxable.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -154,7 +169,7 @@
 					<div class="tsd-signature tsd-kind-icon">internal<wbr>Reducer<span class="tsd-signature-symbol">:</span> <a href="../modules/_reduxable_.html#internalreducer" class="tsd-signature-type">InternalReducer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/8e8f19c/lib/Reduxable.ts#L20">Reduxable.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/18a3410/lib/Reduxable.ts#L27">Reduxable.ts:27</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -164,7 +179,7 @@
 					<div class="tsd-signature tsd-kind-icon">internal<wbr>State<span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type">S</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/8e8f19c/lib/Reduxable.ts#L22">Reduxable.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/18a3410/lib/Reduxable.ts#L29">Reduxable.ts:29</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -174,7 +189,7 @@
 					<div class="tsd-signature tsd-kind-icon">run<wbr>Saga<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/8e8f19c/lib/Reduxable.ts#L18">Reduxable.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/18a3410/lib/Reduxable.ts#L25">Reduxable.ts:25</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -205,13 +220,30 @@
 					<div class="tsd-signature tsd-kind-icon">saga<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Saga</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/8e8f19c/lib/Reduxable.ts#L17">Reduxable.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/18a3410/lib/Reduxable.ts#L24">Reduxable.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="actions" class="tsd-anchor"></a>
+					<h3>actions</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> actions<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A[keyof A]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/18a3410/lib/Reduxable.ts#L31">Reduxable.ts:31</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">A[keyof A]</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="reducer" class="tsd-anchor"></a>
 					<h3>reducer</h3>
@@ -222,7 +254,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/8e8f19c/lib/Reduxable.ts#L26">Reduxable.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/18a3410/lib/Reduxable.ts#L37">Reduxable.ts:37</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Reducer</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -239,7 +271,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/8e8f19c/lib/Reduxable.ts#L34">Reduxable.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/18a3410/lib/Reduxable.ts#L45">Reduxable.ts:45</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">S</span></h4>
@@ -253,13 +285,13 @@
 					<a name="run" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> run</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>arg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AnyAction</span></li>
+						<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>arg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Action</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/8e8f19c/lib/Reduxable.ts#L24">Reduxable.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/gerarts/reduxable/blob/18a3410/lib/Reduxable.ts#L35">Reduxable.ts:35</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -268,7 +300,7 @@
 									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>arg: <span class="tsd-signature-type">P</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AnyAction</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Action</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -293,7 +325,10 @@
 						<a href="_reduxable_.reduxable.html" class="tsd-kind-icon">Reduxable</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_reduxable_.reduxable.html#actions" class="tsd-kind-icon">actions</a>
+								<a href="_reduxable_.reduxable.html#actionmap" class="tsd-kind-icon">action<wbr>Map</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_reduxable_.reduxable.html#actiontypemap" class="tsd-kind-icon">action<wbr>Type<wbr>Map</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_reduxable_.reduxable.html#defaultstate" class="tsd-kind-icon">default<wbr>State</a>
@@ -311,6 +346,9 @@
 								<a href="_reduxable_.reduxable.html#saga" class="tsd-kind-icon">saga</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_reduxable_.reduxable.html#actions" class="tsd-kind-icon">actions</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="_reduxable_.reduxable.html#reducer" class="tsd-kind-icon">reducer</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
@@ -323,8 +361,14 @@
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_reduxable_.actionmap.html" class="tsd-kind-icon">Action<wbr>Map</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="../interfaces/_reduxable_.reduxablestate.html" class="tsd-kind-icon">Reduxable<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../modules/_reduxable_.html#actiontypesfromactionmap" class="tsd-kind-icon">Action<wbr>Types<wbr>From<wbr>Action<wbr>Map</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="../modules/_reduxable_.html#internalreducer" class="tsd-kind-icon">Internal<wbr>Reducer</a>

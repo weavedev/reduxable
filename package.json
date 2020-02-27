@@ -1,6 +1,6 @@
 {
   "name": "@weavedev/reduxable",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Abstract class to create mountable redux store parts with builtin reducers and sagas",
   "main": "dist/Reduxable.js",
   "types": "dist/Reduxable.d.ts",
@@ -32,7 +32,7 @@
       "email": "dev@gerarts.nl"
     }
   ],
-  "license": "GPL-3.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/weavedev/reduxable/issues"
   },

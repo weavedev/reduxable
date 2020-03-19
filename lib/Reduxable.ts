@@ -12,7 +12,7 @@ export interface ActionMap {
     [key: string]: Action;
 }
 
-export type ActionTypesFromActionMap<A extends ActionMap> = {[T in keyof A]: A[T]['type']}
+export type ActionTypesFromActionMap<A extends ActionMap> = {[T in keyof A]: A[T]['type']};
 
 /**
  * Abstract something something
